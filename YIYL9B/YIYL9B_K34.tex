@@ -90,26 +90,30 @@ Veszteségmentes áramlást tételezünk fel, az $m$ tömegű tárgy mérete elh
 	\label{figure:K34A}
 \end{figure}
 \subsubsection*{1. Rugóerő vizsgálata}
-Az $m$ tömegű teher kényszeríti a rugót a megnyúlásra, ennek hatására ébred az ellenkező irányba $\vec{F_r}$ rugóerő.
+Az $m$ tömegű teher kényszeríti a rugót a megnyúlásra, ennek hatására ébred az $\vec{F_r}$ rugóerő.
 \begin{equation}
-	m  \vec{g} = \vec{F_r} = \frac{\Delta h}{\vec{c_r}}
+	m  \vec{g} = \vec{F_r} 
 \end{equation}
 \begin{equation}
-\Delta h = \vec{c_r}  m  \vec{g} = \SI{49}{\milli\meter}
+	F_r = \frac{\Delta h}{{c_r}}
+\end{equation}
+\begin{equation}
+\Delta h = {c_r}  m  g = \SI{49}{\milli\meter}
 \end{equation}
 
-\subsubsection*{2. Imulzuserők vizsgálata}
+\subsubsection*{2. Impulzuserők vizsgálata}
+A feladat megoldásához alkalmazzuk Newton II. tételét. Az alábbiakban látható ábrákról (a, b, ábrák) alapján elkészíthető a vektorábra (c, ábra), melynek segítségével felírható az alábbi egyenletrendszer. 
 \begin{equation}
 	\vec{J_{BE}} + \vec{J_{KI1}} + \vec{J_{KI2}} = \vec{F_r} = m \vec{g}
 \end{equation}
 \begin{equation}
-\vec{J_{BE}} = \dot{m} v_2 = \varrho_v \frac{d^2 \pi}{4} v_1 v_2
+	{J_{BE}} = \dot{m} v_2 = \varrho_v \frac{d^2 \pi}{4} v_1 v_2
 \end{equation}
 \begin{equation}
-\vec{J_{KI1}} = \vec{J_{KI2}} = \frac{1}{2} \dot{m} v_2 = \frac{1}{2} \varrho_v \frac{d^2 \pi}{4} v_1 v_2
+{J_{KI1}} = {J_{KI2}} = \frac{1}{2} \dot{m} v_2 = \frac{1}{2} \varrho_v \frac{d^2 \pi}{4} v_1 v_2
 \end{equation}
 \begin{equation}
-\vec{J_{BE}} + \vec{J_{KI1}} \cos\alpha + \vec{J_{KI2}} \cos\alpha = mg  
+{J_{BE}} + {J_{KI1}} \cos\alpha + {J_{KI2}} \cos\alpha = mg  
 \end{equation}
 \begin{equation}
 \alpha = \frac{1}{2} \cdot 60^\circ
@@ -212,12 +216,12 @@ Az $m$ tömegű teher kényszeríti a rugót a megnyúlásra, ennek hatására �
 	\draw [blue , fill=cyan] [ultra thick] (0.72,-5.75) ellipse (7.5pt and 6pt);
 	\draw [blue , fill=cyan] [ultra thick] (3.28,-5.75) ellipse (7.5pt and 6pt);
 	\draw [blue , fill=cyan] [ultra thick] (2,-5) ellipse (11pt and 4pt);
-	\draw [dashed] (2,-1) -- (2,-8);
+	\draw [dash pattern={on 8mm off 1mm on 0.5mm off 1mm}] (2,-1) -- (2,-8);
 	
 	%impulzus erők
-	\draw [ultra thick][->](2,-5) -- (2,-6) node[anchor=east]{$\dot{m}$} node[anchor=west]{$J_{BE}$};
-	\draw [ultra thick][->](0.72,-5.75) -- ++ (60:-1) node[anchor=east]{$\frac{1}{2}\dot{m}$} node[anchor=west]{$J_{KI1}$} ;
-	\draw [ultra thick][->](3.28,-5.75) -- ++ (120:-1) node[anchor=east]{$\frac{1}{2}\dot{m}$} node[anchor=west]{$J_{KI2}$} ;
+	\draw [ultra thick][->](2,-5) -- (2,-6) node[anchor=east]{$\dot{m}$} node[anchor=west]{$\vec{J_{BE}}$};
+	\draw [ultra thick][->](0.72,-5.75) -- ++ (60:-1) node[anchor=east]{$\dfrac{1}{2}\dot{m}$} node[anchor=west]{$\vec{J_{KI1}}$} ;
+	\draw [ultra thick][->](3.28,-5.75) -- ++ (120:-1) node[anchor=east]{$\dfrac{1}{2}\dot{m}$} node[anchor=west]{$\vec{J_{KI2}}$} ;
 	\draw [white] [fill] (2,-10.023)circle [radius=0.05];
 	\end{tikzpicture}
 	\caption{A vízsugárra ható impulzus erők és irányuk.}			
@@ -231,11 +235,11 @@ Az $m$ tömegű teher kényszeríti a rugót a megnyúlásra, ennek hatására �
 	\draw [ultra thick][->] (2,0) -- (2,-8);
 	\node at (2.6,-4) {$m\vec{g}$};
 	\draw [ultra thick][->] (1.8,0) -- (1.8,-4);
-	\node at (1.3,-2) {$J_{BE}$};
+	\node at (1.3,-2) {$\vec{J_{BE}}$};
 	\draw [ultra thick][->] (1.8,-2*2) -- ++ (240: 1.15*2);
 	\draw [ultra thick][<-] (1.8,-4*2) -- ++ (120: 1.15*2);
-	\node at (0.9,-4.5) {$J_{KI1}$};
-	\node at (0.9,-7.25) {$J_{BE}$};
+	\node at (0.9,-4.5) {$\vec{J_{KI1}}$};
+	\node at (0.9,-7.25) {$\vec{J_{BE}}$};
 	\draw [<->] (2,-6) arc (90:120:2.35 cm); 
 	\node at (1.5,-6.5)[circle,fill=white]{$\alpha$};
 	\draw [white] [fill] (2,-9)circle [radius=0.05];
@@ -245,6 +249,7 @@ Az $m$ tömegű teher kényszeríti a rugót a megnyúlásra, ennek hatására �
 	\label{figure:K34A}
 \end{figure}
 \subsubsection*{3. Veszteségmentes Bernulli egyenlet}
+ Az alábbiakban veszteségmentes Bernulli egyenletet alkalmazunk, mivel az áramlásban nem következeikbe veszteség. A $P_1$ illetve $p_2$ pontban közegnyomás van. Az áramlás a $z_1$ pontból indul és tart a $z_2$-ig. A $z_1$ az \SI{0}{}, mivel az lesz az áramlás kezdőpontja. A $z_2$ pedig áll a cső és az edény közti magasságból és a rugó elmozdulásból.
 \begin{equation}
 	\frac{v_{1}^2}{2} + \frac{p_1}{\varrho_v} + g z_1 = \frac{v_{2}^2}{2} + \frac{p_2}{\varrho_v} + g z_2
 \end{equation}
@@ -283,4 +288,8 @@ Az $m$ tömegű teher kényszeríti a rugót a megnyúlásra, ennek hatására �
 	\quad
 	v_1 = \sqrt{x_2} = \SI{2,463}{\meter\per\second}
 \end{equation}
+Az $x_1$ azért nem megoldás, mivel az $x_1$ negatív szám, ami azt jelentené, hogy a víz visszafele folyna ami fizikailag ebben a szituációban nem lehetséges.
+
+
+Ahhoz hogy a vízsugár a rugót tehermentesítse $\SI{2,463}{\meter\per\second}$ sebességgel kell a csőből kilépnie. 
 \pagebreak
