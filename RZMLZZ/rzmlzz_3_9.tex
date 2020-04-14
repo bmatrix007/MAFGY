@@ -1,0 +1,110 @@
+\section*{3/9. feladat: Megtört lapra ható erő}
+\addcontentsline{toc}{section}{3/9. feladat: Megtört lapra ható erő}
+\begin{tabular}{ | p{2cm} | p{14cm} | } 
+	\hline 
+	Szerző & Péczer Fanni, RZMLZZ \\
+	\hline
+	Szak & Biomérnök Bsc. \\
+	\hline	Félév & 2019/2020 II. (tavaszi) félév  \\
+	\hline
+\end{tabular}
+\vspace{0.5cm}
+
+\noindent Határozza meg az ábrán látható lapra ható eredő impulzuserőt N-ban, $ha$
+
+$c= 10 m/s$,
+
+$u= 2 m/s$,
+
+$\rho_v=10^3 kg/m^3$,
+
+$d=20 mm$,
+
+$\alpha=90°!$
+
+% ide kell az ábra
+
+
+\noindent\hrulefill
+
+% ide kerül a megrajzolt ábra (hatóerők és ellenőrző felület)
+
+\noindent A vektor ábráról leolvasható, hogy a belépő $\vec{J}$ és a kilépő két $\vec{J}$ vektor összegének nagysága egyenlő!
+
+\begin{equation}
+J_{be} = 2 J_{ki}
+\end{equation}
+
+\begin{equation}
+J_{ki} = \frac{J_{be}}{2}
+\end{equation}
+
+\noindent Ebben a feladatban a térfogatáramból $(q_v)$ indul ki a számításunk. A térfogatáram nem függ a cső keresztmetszetének nagyságától, csak a folyadék sebessége függ tőle. Ez alapján:
+
+\begin{equation}
+q_v=A\cdot{v}
+\end{equation}
+
+\noindent Az időegység alatt átáramlott tömeget nevezzük tömegáramnak. A tömegáram a térfogatáramból számítható, erre a feladat során még szükségünk lesz. Ez a következőképpen vezethető le:
+
+\begin{equation}
+q_m=q_v\cdot{\rho_v}
+\end{equation}
+\begin{equation}
+q_m=A\cdot{v}\cdot{\rho_v}
+\end{equation}
+\begin{equation}
+q_m={\rho_v}\cdot{\frac{d^2\cdot{\pi}}{4}}\cdot(c-u)
+\end{equation}
+
+
+\noindent A vektor ábrából és a tömegáram feleződéséből a következő egyenletet kapjuk:
+
+\begin{equation}
+J=J_{be}+2\cdot{J_{ki}\cdot{cos\left(\frac{\alpha}{2}\right)}}
+\end{equation}
+
+\noindent A (3.2)-es egyenletet behelyettesítve a (3.7)-be, az alábbi egyenletet kapjuk és ezt tovább alakítjuk:
+
+\begin{equation}
+J=J_{be}+2\cdot\frac{J_{be}}{2}\cdot{cos\left(\frac{\alpha}{2}\right)}
+\end{equation}
+
+\begin{equation}
+\frac{J}{2}=\frac{J_{be}}{2}+\frac{J_{be}}{2}\cdot{cos\left(\frac{\alpha}{2}\right)}
+\end{equation}
+
+\begin{equation}
+J=J_{be}+{cos\left(\frac{\alpha}{2}\right)}\cdot{J_{be}}
+\end{equation}
+
+\noindent Ahhoz, hogy a (3.10)-es egyenlettel eredményt számolhassunk, ki kell számolni a belépő impulzus értéket. Ehhez szükség van a tömegáram $(q_m)$ és, az áramlási sebesség $(v)$ ismeretére. Ezek a számítások a következőek:
+
+\begin{equation}
+J_{be}=q_m\cdot{v}
+\end{equation}
+
+\begin{equation}
+q_m=\rho_v\cdot{\frac{d^2\cdot{\pi}}{4}}\cdot(c-u)=1000\cdot{\frac{0,02^2\cdot{\pi}}{4}}\cdot(10-2)=2,5133  {\frac{kg\cdot{m}}{s^2}}
+\end{equation}
+
+\begin{equation}
+v=c-u=10-2=8\frac{m}{s}
+\end{equation}
+
+\noindent Tehát a (3.12) és (3.13) egyenletek eredményeit behelyettesítjük a (3.11)-es egyenletbe, így megkapjuk a belépő impulzus mennyiséget:
+
+\begin{equation}
+J_{be}=q_m\cdot{v}=2,5133\cdot{8}=20,1064\frac{kg\cdot{m}}{s^2}
+\end{equation}
+
+\noindent A végeredmény a megadott $\alpha$ és a (3.14)-es egyenlet eredményének segítségével számítható ki:
+
+\begin{equation}
+J=J_{be}+{cos\left(\frac{\alpha}{2}\right)}\cdot{J_{be}}=20,1064+{cos\left(\frac{90}{2}\right)}\cdot{20,1064}=34,3237 \frac{kg\cdot{m}}{s^2}
+\end{equation}
+
+
+\noindent\centering {Tehát a végeredmény $\underline{\underline{34,3237 N}}$}.
+
+\pagebreak
