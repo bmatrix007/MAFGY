@@ -65,10 +65,58 @@ p_0=\SI{1}{bar}=\SI{100000}{Pa}
 A veszteség tényezőt az alábbi egyenlet segítségével határozhatjuk meg:
 
 \begin{equation}
-Y_v=\sum_{i=1}^2\zeta_i\cdot{\frac{c^2}{2}}+\sum_{j=1}^1\lambda_j\cdot{\frac{l_j}{d_j}}\cdot{\frac{c^2}{2}}
+Y_v=\sum_{i=1}^2\zeta_i{\frac{c^2}{2}}+\sum_{j=1}^1\lambda_j{\frac{l_j}{d_j}}{\frac{c^2}{2}}
+\end{equation}
+
+A csőkeresztmetszet felülete kiszámítható:
+
+\begin{equation}
+A={\frac{d^2\cdot{\pi}}{4}}
+\end{equation}
+
+Kezdeti és peremfeltételek:
+
+\begin{equation}
+\zeta_1=2\zeta_k,\zeta_2=\zeta_L, 
+\end{equation}
+
+\begin{equation}
+\lambda_1=\lambda, l_1=\sum{l}
 \end{equation}
 
 
+Az általános egyenletbe behelyettesítve, az alábbi összefüggést kapjuk:
 
+\begin{equation}
+Y_v=(\zeta_L+2\zeta_k+\lambda\frac{l}{d})\frac{c^2}{2}
+\end{equation}
+
+\begin{equation}
+Y_v=\frac{c^2\lambda\sum{l}}{2d}+c^2\zeta_k+\frac{c^2\zeta_L}{2}
+\end{equation}
+
+\begin{equation}
+Y_v=\frac{{\SI{9}{\meter\squared\per\second\squared}}\cdot0,03\cdot\SI{11}{m}}{2\cdot\SI{0,1}{m}}+{\SI{9}{\meter\squared\per\second\squared}\cdot0,5+\frac{{\SI{9}{\meter\squared\per\second\squared}}\cdot3}{2}}
+\end{equation}
+
+\begin{equation}
+Y_v=\SI{32,85}{\meter\squared\per\second\squared}}
+\end{equation}
+
+Veszteséges Bernoulli-egyenlet:
+\begin{equation}
+\frac{c_1^2}{2}+\frac{p_1}{\rho_v}+z_1g=\frac{c_2^2}{2}+\frac{p_2}{\rho_v}+z_2g+Y_v
+\end{equation}
+
+Kezdeti és peremfeltételek:
+
+\begin{equation}
+c_1=0, c_2=c,z_1=0, z_2=H, p_1=p_0
+\end{equation}
+
+Az egyenletetbe behelyettesítve:
+\begin{equation}
+\frac{p_0}{\rho_v}=\frac{c^2}{2}+gH+Y_v+\frac{p_2}{\rho_v}
+\end{equation}
 
 
