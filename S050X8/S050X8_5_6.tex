@@ -1,0 +1,58 @@
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\section*{H5/6. feladat}
+\addcontentsline{toc}{section}{H5/6. feladat}
+Határozza meg mekkora fordulatszámon ($\SI{}{1\per\min}$-ban) járhat a légüst nélküli szivattyút hajtó kulisszás hajtómű hajtótengelye, ha a szivattyú $\SI{20}{\celsius}$ hőmérsékletű vizet szállít, hogy a szívócsőben a vízoszlop még éppen ne szakadjon meg! A veszteségeket elhanyagolhatjuk. A $\SI{20}{\celsius}$-hoz tartozó telített gőznyomás
+
+\begin{equation*}
+	p_g=\SI{2338}{\Pa},
+	\quad
+	p_0=\SI{e5}{\Pa},
+	\quad
+	D=\SI{20}{\centi\meter},
+	\quad
+	d=\SI{12}{\centi\meter},
+	\quad
+	s=\SI{25}{\centi\meter},
+\end{equation*}
+\begin{equation*}
+	H=\SI{4}{\meter},
+	\quad
+	l=\SI{5}{\meter},
+	\quad
+	\rho_v=\SI{e3}{\kilogram\per\meter\cubed},
+	\quad
+	g=\SI{9,81}{\meter\per\s\squared}
+\end{equation*}
+Instacionárius áramlásról lévén szó, az áramvonal (1-2) pontjaira felírható Bernoulli-egyenlet a következő:
+\begin{equation*}
+	\int_{1}^{2}{\frac{\delta v}{\delta t}\cdot ds + \left[{\frac{v^2}{2} + U + \frac{p}{\rho}}\right]_1^2}=0
+\end{equation*}
+Az áramvonal két pontjában az összetartozó adatok:
+\begin{center}
+	\begin{tabular}{ll}
+		\circled{1} pont & \circled{2} pont \\
+		$v_1=0$ & $v_2=0$ \\
+		$p_1=p_0$ & $p_2=p_g$ \\
+		$U_1=0$ & $U_2=gH$
+	\end{tabular}
+\end{center}
+Az egyenlet első tagját vizsgálva, annak integrálása szakaszonként elvégezhető:
+\begin{equation*}
+	\int_{1}^{1'}{\frac{\delta v}{\delta t}\cdot ds = 0};
+	\int_{1'}^{2'}{\frac{\delta v}{\delta t}\cdot ds = a\cdot L};
+	\int_{2'}^{2}{\frac{\delta v}{\delta t}\cdot ds = a_{max}\cdot 1}
+\end{equation*}
+A fentiek alapján a Bernoulli-egyenlet a következőképp írható:
+\begin{equation*}
+	a\cdot L+a_{max}\cdot 1+\frac{p_g}{\rho}-\frac{p_0}{\rho}+g\cdot H = 0
+\end{equation*}
+A kontinuitás a gyorsulásokra is érvényes:
+\begin{equation*}
+	a\cdot A_1 = a_{max}\cdot A_2 \rightarrow a=a_{max}\cdot\frac{A_2}{A_1}
+\end{equation*}
+ezzel:
+\begin{equation*}
+	a_{max}\cdot\left(\frac{A_2}{A_1}\cdot L+1\right)=\frac{1}{\rho}\left(p_0-p_g\right)-gH
+\end{equation*}
