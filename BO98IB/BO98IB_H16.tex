@@ -1,0 +1,121 @@
+\section*{1/16. feladat: Gázharang}
+\addcontentsline{toc}{section}{1/16. feladat: Gázharang}
+\begin{tabular}{ | p{2cm} | p{14cm} | } 
+	\hline 
+	Szerző & Cseresznyés Hunor, BO98IB \\
+	\hline
+	Szak & Biomérnök Bsc. \\
+	\hline	Félév & 2019/2020 II. (tavaszi) félév  \\
+	\hline
+\end{tabular}
+\vspace{0.5cm}
+
+%========Feladat megfogalmazása=============
+
+\noindent Határozza meg az ábrán látható gáztartályban uralkodó nyomást bar-ban és a gázharang súlyát,$ha$
+
+$h = \SI{1,0}{\m}$,
+
+$\varnothing D = \SI{3}{m}$,
+
+$\rho_v = 10^3 kg/m^3$,
+
+$p_0 = \SI{1}{\bar}$,
+
+%======Ábra============
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+
+%========Vonal ábrázolás============== 
+\draw    (260,90) -- (460,90) ;
+ 
+\draw    (260,40) -- (260,90) ;
+ 
+\draw    (460,40) -- (460,90) ;
+ 
+\draw    (300,20) -- (300,80) ;
+
+\draw    (300,20) -- (420,20) ;
+ 
+\draw    (420,20) -- (420,80) ;
+ 
+\draw    (300,40) -- (417,40) ;
+\draw [shift={(420,40)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+ 
+\draw    (420,40) -- (303,40) ;
+\draw [shift={(300,40)}, rotate = 360] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+ 
+\draw [line width=0.75]  [dash pattern={on 0.84pt off 2.51pt}]  (360,0) -- (360,114) ;
+ 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (480.83,70) -- (420,70) ;
+ 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (460,50) -- (480.28,50) ;
+ 
+\draw    (480,50) -- (480,70) ;
+\draw [shift={(480,70)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+\draw [shift={(480,50)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+
+\draw    (260,50) -- (300,50) ;
+ 
+\draw    (420,50) -- (460,50) ;
+ 
+\draw    (300,70) -- (420,70) ;
+ 
+\draw   (280.01,50.58) -- (270,40.01) -- (290,40) -- cycle ;
+ 
+\draw    (280,50) .. controls (284,58.46) and (272.75,51.46) .. (280,60) ;
+ 
+\draw    (320,70) .. controls (324,78.46) and (312.75,71.46) .. (320,80) ;
+ 
+\draw   (320.01,70.57) -- (310,60) -- (330,59.99) -- cycle ;
+
+%=========Felirat==============
+\draw (385.29,24.58) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {{\fontfamily{ptm}\selectfont {\tiny ⌀D}}};
+
+\draw (435.85,26.8) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {{\fontfamily{ptm}\selectfont {\scriptsize p}{\tiny 0}}};
+
+\draw (383.46,72.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {{\fontfamily{ptm}\selectfont {\scriptsize $\rho$}{\tiny v}}};
+
+\draw (488,52) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {{\fontfamily{ptm}\selectfont {\scriptsize h}}};
+
+\draw (393.6,49.6) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {{\fontfamily{ptm}\selectfont {\scriptsize p}{\tiny x}}};
+
+\end{tikzpicture}
+\end{figure}
+
+%=====Feladat megoldása========
+\noindent\hrulefill
+\subsubsection{Feladat megoldás}
+\noindent A megoldásunkhoz felhasználjuk a Pascal törvényt,amely azt mondja ki, hogy zárt térben lévő folyadékban vagy gázban a külső erő okozta nyomás minden irányban gyengítetlenül tovaterjed.
+
+\begin{equation}
+p_x = p_0+\rho_v\cdot{h}\cdot{g}
+\end{equation}
+
+\noindent Helyettesítsünk be az egyenletbe a megadott adataink alapján úgy, hogy 1 bar = 101325 Pa és a nehézségi erőt $g = 10 m/s^2$ vesszük.
+
+\begin{equation}
+p_x = 101325+\SI{e3}\cdot{1}\cdot{10} = 111325 Pa 
+\end{equation}
+
+\begin{equation}
+p_x =\frac{111325}{101325}= 1,098 bar 
+\end{equation}
+
+\noindent Tehát a gáztartályban uralkodó nyomás végeredménye bar-ban: $\underline{\underline{1,098 bar}}$
+
+\vspace{0.5cm}
+
+\noindent Figyelnünk kell arra hogy a test(harang) vízbe merülő része egy kör alakú felület így ezzel is el kell számolnunk,tehát a gáz harang súlyát a következőképp számolhatjuk ki:
+
+\begin{equation}
+G =\frac{D^2\cdot{\pi}}{4}\cdot{h}\cdot{\rho_v}\cdot{g}
+\end{equation}
+
+\begin{equation}
+G =\frac{3^2\cdot{\pi}}{4}\cdot{1}\cdot{10^3}\cdot{10} = 70685 N
+\end{equation}
+
+\noindent Tehát a gázharang súlya: 
+$\underline{\underline{70685 N}}$
