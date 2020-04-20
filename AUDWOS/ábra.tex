@@ -1,0 +1,25 @@
+\begin{figure}[h]
+	\centering
+	\label{figure:sm}
+	\begin{tikzpicture}
+		% Rács és vágómaszk
+		\draw[step=1cm, red, very thin] (-8, -5) grid (8, 5);
+		%\clip (-8, -5) rectangle (8, 5);
+%KÖR!!!			
+		\draw [ultra thick] (-3, 3) circle (0.5);
+		\draw [ultra thick] (-3, 3) circle (0.05);
+%VÍZSZINTES CSŐRÉSZ
+		\draw [ultra thick] (-2.95, 3) -- (2.5, 3);
+%ILLESZTÉSEK IDOM		
+		\draw [ultra thick] (2.5, 2.9) -- (2.5, 3.1);
+		\draw [ultra thick] (2.9, 2.5) -- (3.1, 2.5);
+%FÜGGŐLEGES CSŐRÉSZ
+        \draw [ultra thick] (3, 2.5) -- (3, -4);
+%GÖRBE IDOM
+        \draw [ultra thick] (3, 2.5) arc [radius=0.5, start angle=0, end angle=90]
+%FELSŐ IDOM
+
+       
+	\end{tikzpicture}
+	\caption{Példa ábra}
+\end{figure}
