@@ -1,17 +1,59 @@
 \section*{1/21. feladat: Elzáró szerkezet}
 \addcontentsline{toc}{section}{1/21. feladat}
-Az ábrán látható egy \textbf{A} felületű lemez zár le, amelynek nyitása a \textbf{G} súlynak egy vízszintes karon való mozgatásával szabályozható. Mekkora \textbf{x} távolsággal kell a súlyt elmozdítani, hogy a folyadék éppen ne folyjon ki, ha a folyadékszint $\Delta h$ magassággal nő?
+\begin{tabular}{ | p{2cm} | p{14cm} | } 
+	\hline
+	Szerző & Talpai Szindarella, R41KZ8 \\ 
+	\hline
+	Szak & Vegyészmérnök \\ 
+	\hline
+	Félév & 2019/2020 II. (tavaszi) félév \\ 
+	\hline
+\end{tabular}
+\vspace{0.5cm}
 
-$\varrho_{L} \cong \SI{0}{}$,
+\noindent  Az ábrán látható egy $ A $ felületű lemez zár le, amelynek nyitása a $ G $ súlynak egy vízszintes karon való mozgatásával szabályozható. Mekkora $ x $ távolsággal kell a súlyt elmozdítani, hogy a folyadék éppen ne folyjon ki, ha a folyadékszint $\Delta h$ magassággal nő?
 
-h = \SI{60}{\cm},
-
-$\Delta h$ = \SI{5}{\cm}$,
-
-a = \SI{20}{\cm}.
+\begin{flushleft}
+	$\varrho_{L}$ $\cong$ \SI{0}{\kilogram\per\meter\cubed},\\
+	h = \SI{60}{\centi\meter},\\
+	$\Delta$h = \SI{5}{\centi\meter},\\
+	a = \SI{20}{\centi\meter}.
+\end{flushleft}
 
 \noindent\hrulefill
 
+\noindent A  súly által kifejtett forgatónyomaték és a hidrosztatikai nyomás által kifejtett erők egyenlőek.
 
+\begin{equation}
+	p = \dfrac{F}{A}
+	\quad 
+	\Rightarrow
+	\quad 
+	F = pA
+\end{equation}
 
+\noindent A sűrűség kifejezve paraméteresen:
+\begin{equation}
+	 \varrho ghA = aG
+	 \quad 
+	 \Rightarrow
+	 \quad 
+	 \varrho = \dfrac{G}{A} \SI{0,03398}{\meter\per\second\squared}
+\end{equation}
+
+\noindent Az elmozdított esetre felírt erőkből kitudjuk számolni az $x$ értékét:
+\begin{equation}
+	\dfrac{\bcancel{G}}{\bcancel{A}}
+	 \SI{0,03398}{\meter\per\second\squared} g \left( h + \Delta h\right) \bcancel{A}
+	 = 
+	 \left( a+x\right) \bcancel{G}
+\end{equation}
+
+\begin{equation}
+	\SI{21,67}{\centi\meter} = \SI{20}{\centi\meter} + x 
+\end{equation}
+
+\begin{equation}
+	x = \SI{1,67}{\centi\meter}
+\end{equation}
 

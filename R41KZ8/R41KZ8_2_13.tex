@@ -1,19 +1,26 @@
 \section*{2/13. feladat: Forgó könyökcső vízszállítása}
 \addcontentsline{toc}{section}{2/13. feladat}
-Határozza meg a vízzel feltöltött könyökcső vízszállítását $\ell$/s-ban, ha
+\begin{tabular}{ | p{2cm} | p{14cm} | } 
+	\hline
+	Szerző & Talpai Szindarella, R41KZ8 \\ 
+	\hline
+	Szak & Vegyészmérnök \\ 
+	\hline
+	Félév & 2019/2020 II. (tavaszi) félév \\ 
+	\hline
+\end{tabular}
+\vspace{0.5cm}
 
-n = \SI{400}{1/\minute},
-
-d = \SI{30}{\mm},
-
-r = \SI{0,2}{\m},
-
-$\varrho_{v} = \SI{e3}{\kilogram/\meter\cubed} $,
-
-g = \SI{9,81}{\meter/\second\squared},
-
-p_{0} = \SI{1}{\bar}.
-
+\noindent Határozza meg a vízzel feltöltött könyökcső vízszállítását $\si{\liter\per\second}$-ban, ha
+\begin{flushleft}
+	n = \SI{400}{1\per\minute},\\
+	d = \SI{30}{\milli\meter} = \SI{0,03}{\meter},\\
+	h = \SI{0,15}{\meter},\\
+	r = \SI{0,2}{\meter},\\
+	$\varrho_{v}$ = \SI{e3}{\kilogram\per\meter\cubed},\\
+	g = \SI{9,81}{\meter\per\second\squared},\\
+	$p_{0}$ = \SI{1}{\bar} = \SI{e5}{\pascal}.
+\end{flushleft}
 \vspace{2mm}
 
 \noindent Az áramlás veszteségmentesnek tekinthető.
@@ -28,3 +35,116 @@ p_{0} = \SI{1}{\bar}.
 \end{flushleft}
 
 \noindent\hrulefill
+
+\subsubsection{Függőleges tengely körül forgó rendszer}
+A függőleges tengely körül forgó vonatkoztatási rendszer miatt henger-koordinátarendszert alkalmazunk. A térerő: 
+\begin{equation}
+	\vec{f} = \vec{g} - \vec{a}_{cp}
+	=
+	\mtrx{\omega ^{2} r \\ 0 \\ -g} \mtrx{\dif r \\ rd \vartheta \\ \dif z}
+\end{equation}
+
+\subsubsection{A nyomáskülönbség számítása}
+\noindent A szögsebesség meghatározása:
+\begin{equation}
+	n = \SI{400}{1\per\minute}
+	\quad 
+	\Rightarrow
+	\quad 
+	\omega = \dfrac{2 \pi}{60} 400 = \SI{41,893}{\radian\per\second}
+\end{equation}
+
+\noindent A két pont közti nyomáskülönbség a hidrostatika alapegyenletének integrális alakjából kiindulva: 
+\begin{equation}
+ 	p_{A} - p_{B} = \int_{B}^{A} \varrho_{v} \vec{f} \cdot \dif \vec{r}
+ 	=
+ 	\varrho_{v} \int_{r}^{0} \omega ^{2} r \dif r 
+ 	+ 
+ 	\varrho_{v} \int_{h}^{0} \left( -g \right) \dif z 	
+\end{equation}
+
+\begin{equation}
+	p_{A} - p_{B} = \varrho_{v} \omega ^{2} \left[ \dfrac{r^{2}}{2}\right]_{r}^{0}
+	+
+	\varrho_{v} g \left[ z\right]_{0}^{h}
+	=
+	\varrho_{v} \omega ^{2} \left( - \dfrac{r^{2}}{2}\right)
+	+ \varrho_{v} g h
+\end{equation}
+
+\begin{equation}
+	p_{A} = p_{B} - \varrho_{v} \omega ^{2} \dfrac{r^{2}}{2}
+	+
+	\varrho_{v} g h	
+	=
+	\SI{66 376}{\pascal}
+\end{equation}
+\subsubsection{Bernoulli-tétel alapján}
+\noindent Az áramlás veszteségmentesnek tekinthető, ezért ennek megfelelő Bernoulli-egyenletet alkalmazzuk:
+\begin{equation}
+	\dfrac{v_{1}^{2}}{2} + \dfrac{p_{1}}{\varrho} + \dfrac{1}{2} \omega ^{2} r_{1}^{2} + gz_{1}
+	=
+	\dfrac{v_{2}^{2}}{2} + \dfrac{p_{2}}{\varrho} + \dfrac{1}{2} \omega ^{2} r_{2}^{2} + gz_{2}
+\end{equation}
+
+\noindent Kezdeti és peremfeltételek: 
+\begin{equation*}
+	v_{1} = \SI{0}{\meter\per\second}  
+	\quad
+	p_{1} = p_{0} = \SI{e5}{\pascal}  
+	\quad
+	\omega = \SI{41,893}{\radian\per\second}
+	\quad
+	r_{1} = \SI{0,2}{\meter}
+	\quad
+	z_{1} = h
+\end{equation*}
+
+\begin{equation*}
+	v_{2} = ? \si{\meter\per\second} 
+	\quad
+	p_{2} = \SI{66 376}{\pascal}  
+	\quad
+	\omega = \SI{41,893}{\radian\per\second}
+	\quad
+	r_{2} = \SI{0}{\meter}
+	\quad
+	z_{2} = \SI{0}{\meter}
+\end{equation*}
+
+\noindent Kifejezve a $v_{2}$-t : 
+
+\begin{equation}
+	v_{2} = \sqrt{\left( \dfrac{p_{1}-p_{2}}{\varrho} + \dfrac{1}{2} \omega ^{2} r_{1}^{2} + g h \right) 2 }
+\end{equation}
+
+\noindent Az egyenletbe behelyettesítve:
+
+\begin{equation}
+	v_{2} = \sqrt{\left( \dfrac{\SI{e5}{\pascal}-\SI{66 376}{\pascal}}{\SI{e3}{\kilogram\per\meter\cubed}}
+	+ 
+	\dfrac{1}{2} {41,893}^{2} \si{\radian\per\second} {0,2}^{2} \si{\meter}
+	+ 
+	\SI{9,81}{\meter\per\second\squared} \SI{0,15}{\meter} \right) 2 }
+	= 
+	\SI{11,85}{\meter\per\second}
+\end{equation}
+
+\subsubsection{A térfogatáram}
+\noindent A folyadék szállításának pillanatnyi gyorsaságát adja meg az időegység alatt átáramlott térfogat alakjával egy adott keresztmetszeten.\\
+\noindent A keresztmetszet kiszámítható:
+\begin{equation}
+	A = \dfrac{d^{2} \pi}{4}
+\end{equation}
+
+\noindent A könyökcső vízszállítása:
+\begin{equation}
+	\dot{V} = v_{2} A =  \SI{11,85}{\meter\per\second} \quad 7,07 \cdot 10^{-4} \si{\meter\squared}
+	= 
+	8,38 \cdot 10^{-3} \si{\meter\cubed\per\second}
+\end{equation}
+
+\noindent Átszámítva $\si{\liter\per\second}$-ban:
+\begin{equation}
+	\dot{V} = \SI{8,38}{\liter\per\second}
+\end{equation}
