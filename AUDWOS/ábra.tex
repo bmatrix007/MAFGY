@@ -3,7 +3,7 @@
 	\label{figure:sm}
 	\begin{tikzpicture}
 		% Rács és vágómaszk
-		\draw[step=1cm, red, very thin] (-8, -5) grid (8, 5);
+		\draw[step=1cm, white, very thin] (-8, -5) grid (8, 5);
 		%\clip (-8, -5) rectangle (8, 5);
 %KÖR!!!			
 		\draw [ultra thick] (-3, 3) circle (0.5);
@@ -14,12 +14,28 @@
 		\draw [ultra thick] (2.5, 2.9) -- (2.5, 3.1);
 		\draw [ultra thick] (2.9, 2.5) -- (3.1, 2.5);
 %FÜGGŐLEGES CSŐRÉSZ
-        \draw [ultra thick] (3, 2.5) -- (3, -4);
+        \draw [ultra thick] (3, 2.5) -- (3, -3);
 %GÖRBE IDOM
-        \draw [ultra thick] (3, 2.5) arc [radius=0.5, start angle=0, end angle=90]
+        \draw [ultra thick] (3, 2.5) arc [radius=0.5, start angle=0, end angle=90];
 %FELSŐ IDOM
-
-       
+        \draw [ultra thick] (-3.5, 3) -- (-3.5, 4);
+%FELSŐ IDOM ILLESZTÉS
+        \draw [ultra thick] (-3.6, 4) -- (-3.4, 4);
+%VÍZ
+        \draw [ultra thick] (-5, -2) -- (3.75, -2);
+%ILLESZTÉSEK IDOM ALUL		
+        \draw [ultra thick] (2.9, -2.75) -- (3.1, -2.75); 
+%LÁBSZELEP TÉGLALAP
+        \draw [ultra thick] (2.5, -3) rectangle (3.5, -3.5);     
+%LÁBSZELEP ÁTLÓ
+        \draw [thick] (2.5, -3) -- (3.5, -3.5);
+%LÁBSZELEP PÖTTY
+        \draw [ultra thick] (3.5, -3.5) circle (0.05);
+%MÉRETSEGÉDVONAL függőleges
+\draw[dash pattern={on 8mm off 1mm on 0.5mm off 1mm}] (-3, 4) -- (-3, 2);       
+%MÉRETSEGÉDVONAL vízszintes
+\draw[dash pattern={on 8mm off 1mm on 0.5mm off 1mm}] (-5.5, 3) -- (-3.05, 3);
+               
 	\end{tikzpicture}
 	\caption{Példa ábra}
 \end{figure}
