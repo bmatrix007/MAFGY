@@ -16,29 +16,18 @@
 \vspace{0.5cm}
 
 
-\noindent Az ábrán látható szívócső teljes hossza
-
-$l_\sum= \SI{11}{m}$,
-
+\noindent Az ábrán látható szívócső teljes hossza $l_\Sigma= \SI{11}{m}$,
 $d= \SI{0,1}{m}$ átmérője,
-
 $\lambda= 0,03$ a csősúrlódási tényező,
-
 $c= \SI{3}{\meter\per\second}$ az áramlás sebessége,
-
-Az idomdarabok veszteségtényezői:
-
+az idomdarabok veszteségtényezői:
 lábszelep $\zeta_L= 3$, ívdarabok $\zeta_k= 0,5$.
-
 $H= \SI{5}{m}$ magasság,
-
-$\rho_v= \SI{1000}{\kilogram\per\meter\cubed}$,
-
+$\varrho_V= \SI{1000}{\kilogram\per\meter\cubed}$,
 $p_0= \SI{1}{bar}$,
-
 $g= \SI{9,81}{\meter\per\second\squared}$ 
 
-\noindent a) Mekkora a nyomás a szívócső \textbf{A} pontjában a szivattyú belépésénél?
+\noindent a) Mekkora a nyomás a szívócső $A$ pontjában a szivattyú belépésénél?
 
 \noindent b) Mekkora a szívócső egyenértékű csőhosszúsága?
 
@@ -61,53 +50,57 @@ $g= \SI{9,81}{\meter\per\second\squared}$
 p_0=\SI{1}{bar}=\SI{100000}{Pa}
 \end{equation}
 
-A veszteség tényezőt az alábbi egyenlet segítségével határozhatjuk meg:
+A tömegfajlagos energia veszteséget az alábbi egyenlet segítségével határozhatjuk meg:
 
 \begin{equation}
-Y_v=\sum_{i=1}^2\zeta_i{\frac{c^2}{2}}+\sum_{j=1}^1\lambda_j{\frac{l_j}{d_j}}{\frac{c^2}{2}}
+Y_{veszt}=\sum_{i=1}^2\zeta_i{\frac{c^2}{2}}+\sum_{j=1}^1\lambda_j{\frac{l_j}{d_j}}{\frac{c^2}{2}}
 \end{equation}
 
 A csőkeresztmetszet felülete kiszámítható:
 
 \begin{equation}
-A={\frac{d^2\cdot{\pi}}{4}}
+A={\frac{d^2{\pi}}{4}}
 \end{equation}
 
-Kezdeti és peremfeltételek:
+%Kezdeti és peremfeltételek:
+
+%\begin{equation}
+%\zeta_1=2\zeta_k,\zeta_2=\zeta_L, 
+%\end{equation}
+
+%\begin{equation}
+%\lambda_1=\lambda, l_1=\sum{l}
+%\end{equation}
+
+
+A csővezetékrendszer tömegfajlagos energia veszteségének egyenletébe behelyettesítve, az alábbi összefüggést kapjuk:
 
 \begin{equation}
-\zeta_1=2\zeta_k,\zeta_2=\zeta_L, 
-\end{equation}
-
-\begin{equation}
-\lambda_1=\lambda, l_1=\sum{l}
-\end{equation}
-
-
-Az általános egyenletbe behelyettesítve, az alábbi összefüggést kapjuk:
-
-\begin{equation}
-Y_v=(\zeta_L+2\zeta_k+\lambda\frac{l}{d})\frac{c^2}{2}
-\end{equation}
-
-\begin{equation}
-Y_v=\frac{c^2\lambda\sum{l}}{2d}+c^2\zeta_k+\frac{c^2\zeta_L}{2}
+Y_{veszt}=\left(\zeta_L+2\zeta_k+\lambda\frac{l}{d} \right)\frac{c^2}{2}
 \end{equation}
 
 \begin{equation}
-Y_v=\frac{{\SI{9}{\meter\squared\per\second\squared}}\cdot0,03\cdot\SI{11}{m}}{2\cdot\SI{0,1}{m}}+{\SI{9}{\meter\squared\per\second\squared}\cdot0,5+\frac{{\SI{9}{\meter\squared\per\second\squared}}\cdot3}{2}}
+Y_{veszt}=\frac{c^2\lambda\Sigma{l}}{2d}+c^2\zeta_k+\frac{c^2\zeta_L}{2}
 \end{equation}
+Behelyettesítve a számértékeket, megkapjuk a tömegfajlagos energiaveszteség értékét:
 
 \begin{equation}
-\underline{\underline{Y_v=\SI{32,85}{\meter\squared\per\second\squared}}}}
+Y_{veszt}=\frac{{\SI{9}{\meter\squared\per\second\squared}}\cdot0,03\cdot\SI{11}{m}}{2\cdot\SI{0,1}{m}}+{\SI{9}{\meter\squared\per\second\squared}\cdot0,5+\frac{{\SI{9}{\meter\squared\per\second\squared}}\cdot3}{2}}
 \end{equation}
 
+%\begin{equation}
+%\underline{\underline{Y_{veszt}=\SI{32,85}{\meter\squared\per\second\squared}}}}
+%\end{equation}
+
+\begin{equation}
+\underline{\underline{Y_{veszt}=\SI{32,85}{\J\per\kilogram}}}}
+\end{equation}
 Veszteséges Bernoulli-egyenlet:
 \begin{equation}
-\frac{c_1^2}{2}+\frac{p_1}{\rho_v}+z_1g=\frac{c_2^2}{2}+\frac{p_2}{\rho_v}+z_2g+Y_v
+\frac{c_1^2}{2}+\frac{p_1}{\varrho_V}+z_1g=\frac{c_2^2}{2}+\frac{p_2}{\varrho_V}+z_2g+Y_{veszt}
 \end{equation}
 
-Kezdeti és peremfeltételek:
+%Kezdeti és peremfeltételek:
 
 \begin{equation}
 c_1=0, c_2=c,z_1=0, z_2=H, p_1=p_0
@@ -116,7 +109,7 @@ c_1=0, c_2=c,z_1=0, z_2=H, p_1=p_0
 Az egyenletetbe behelyettesítve:
 
 \begin{equation}
-\frac{p_0}{\rho_v}=\frac{c^2}{2}+gH+Y_v+\frac{p_2}{\rho_v}
+\frac{p_0}{\varrho_V}=\frac{c^2}{2}+gH+Y_{veszt}+\frac{p_2}{\varrho_V}
 \end{equation}
 
 \begin{equation}
@@ -135,12 +128,12 @@ Az egyenletetbe behelyettesítve:
 \cdot
 \SI{5}{m}
 +
-\SI{32,85}{\meter\squared\per\second\squared}
+\SI{32,85}{\J\per\kilogram}
 +
 \frac{p_2}{\SI{1000}{\kilogram\per\meter\cubed}}
 \end{equation}
 
-Tehát az \textbf{A} pontban uralkodó nyomás:
+Tehát az $A$ pontban uralkodó nyomás:
 
 \begin{equation}
 \underline{\underline{p_2=\SI{13 600}{Pa}}}
@@ -151,13 +144,13 @@ Tehát az \textbf{A} pontban uralkodó nyomás:
 Egyenértékű csőhosszúság számítása:
 
 \begin{equation}
-l_e=\sum{l}+(\zeta_L+2\zeta_k)\frac{d}{\lambda}
+l_E=\Sigma{l}+\left(\zeta_L+2\zeta_k)\right\frac{d}{\lambda}
 \end{equation}
 
 \begin{equation}
-l_e=\SI{11}{m}+(3+2\cdot0,5)\cdot\frac{\SI{0,1}{m}}{0,03}
+l_E=\SI{11}{m}+\left(3+2\cdot0,5\right)\cdot\frac{\SI{0,1}{m}}{0,03}
 \end{equation}
 
 \begin{equation}
-\underline{\underline{l_e=\SI{24,33}{m}}}
+\underline{\underline{l_E=\SI{24,33}{m}}}
 \end{equation}
