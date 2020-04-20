@@ -1,3 +1,4 @@
+
 \section*{3/9. feladat: Megtört lapra ható erő}
 \addcontentsline{toc}{section}{3/9. feladat: Megtört lapra ható erő}
 \begin{tabular}{ | p{2cm} | p{14cm} | } 
@@ -10,26 +11,105 @@
 \end{tabular}
 \vspace{0.5cm}
 
-\noindent Határozza meg az ábrán látható lapra ható eredő impulzuserőt N-ban, $ha$
+\noindent Határozza meg, a bal oldali ábrán látható,
+lapra ható eredő impulzuserőt N-ban, $ha$
+az egyik sebesség $c=\SI{10}{\meter\per\second}$, míg a másik sebesség $u=\SI{2}{\meter\per\second}$	a víz sűrűsége $\rho_v=\SI{e3}{\kilo\gram\per\meter\cubed}=\SI{1000}{\kilo\gram\per\meter\cubed}$	a cső átmérője $d=\SI{20}{\milli\meter}=\SI{0,02}{\meter}$ és a törés szöge	$\alpha=\SI{90}{\degree}$!
 
-$c=\SI{10}{\meter\per\second}$,
-
-$u=\SI{2}{\meter\per\second}$,
-
-$\rho_v=\SI{e3}{\kilo\gram\per\meter\cubed}=\SI{1000}{\kilo\gram\per\meter\cubed}$,
-
-$d=\SI{20}{\milli\meter}=\SI{0,02}{\meter}$,
-
-$\alpha=\SI{90}{\degree}$!
-
-% ide kell az ábra
+\begin{figure}[ht]
+\begin{subfigure}[b]{0.5\textwidth}
+	\centering
+	\label{figure:sm}
+		\begin{tikzpicture}
+			\draw[step=1cm, white, very thin] (-5, -1) grid (5, 6);
+			\draw[black, ultra thick] (0, 0) -- (2.5, 2.5);
+			\draw[black, ultra thick] (2.5, 2.5) -- (0, 5);
+			\draw[black, ultra thick] (-3.25, 2) rectangle (-1.25, 3);
+			\draw[color=black, semithick, dashed] (-1.25,2) -- (1.25, 2);
+			\draw[color=black,semithick,  dashed] (-1.25,2.25) -- (1.75, 2.25);
+			\draw[color=black,semithick,  dashed] (-1.25,2.5) -- (2.25, 2.5);
+			\draw[color=black,semithick,  dashed] (-1.25,2.75) -- (1.75, 2.75);
+			\draw[color=black,semithick,  dashed] (-1.25,3) -- (1.25, 3);
+			\draw[color=black, semithick, dashed, angle=45] (1.25, 2) -- (0,0.75);
+			\draw[color=black, semithick, dashed, angle=45] (1.75, 2.25) -- (0,0.5);
+			\draw[color=black, semithick, dashed, angle=45] (2.25, 2.5) -- (0,0.25);
+			\draw[color=black, semithick, dashed, angle=135] (1.25, 3) -- (0,4.25);
+			\draw[color=black, semithick, dashed, angle=135] (1.75, 2.75) -- (0,4.5);
+			\draw[color=black, semithick, dashed, angle=135] (2.25, 2.5) -- (0,4.75);
+			\draw (2.5, 3.5) arc [radius=1.0, start angle=90, end angle=270];
+			\draw[thin, dash dot] (-4, 2.5) -- (3.5, 2.5);
+			\node[west] at (2,2.5) {$\alpha$};
+			\node[south] at (-0.25,2.5) {C};
+			\node[south] at (3,2.75) {U};
+			\draw[->, black] (-1.25, 2.5) -- (-0.25, 2.5);
+			\draw[->, black] (2.75, 2.5) -- (3.5, 2.5);
+			\draw[->, black] (-3, 1) -- (-3, 2);
+			\draw[black, semithick] (-3, 2) -- (-3, 3);
+			\draw[->, black] (-3, 4) -- (-3, 3);
+			\draw[black, semithick] (-3, 3.5) -- (-2, 3.5) 
+			node[black, anchor=south east]{$\phi{d}$};
+			\draw[black, semithick] (-1, 3.5) -- (0, 3.5);
+			\draw[black, semithick] (0, 3.5) -- (0.5, 2.5);
+			\draw[black, semithick] (-0.25, 3.5) -- (-0.25, 3.5) node[black, anchor=south east]{$\rho_V$};
+			\draw [->, black] (2.5, 3.5) arc [radius=1.0, start angle=90, end angle=135];
+			\draw [->, black] (2.5, 1.5) arc [radius=1.0, start angle=270, end angle=225];
+		\end{tikzpicture}
+		\caption{Megtört lapra ható erő}
+\end{subfigure}
+\begin{subfigure}[b]{0.5\textwidth}
+\centering
+\begin{tikzpicture}
+	\draw[step=1cm, white, very thin] (-5, -1) grid (5, 6);
+	\draw[black, ultra thick] (0, 0) -- (2.5, 2.5);
+	\draw[black, ultra thick] (2.5, 2.5) -- (0, 5);
+	\draw[black, ultra thick] (-3.25, 2) rectangle (-1.25, 3);
+	\draw[color=black, semithick, dashed] (-1.25,2) -- (1.25, 2);
+	\draw[color=black,semithick,  dashed] (-1.25,2.25) -- (1.75, 2.25);
+	\draw[color=black,semithick,  dashed] (-1.25,2.5) -- (2.25, 2.5);
+	\draw[color=black,semithick,  dashed] (-1.25,2.75) -- (1.75, 2.75);
+	\draw[color=black,semithick,  dashed] (-1.25,3) -- (1.25, 3);
+	\draw[color=black, semithick, dashed, angle=45] (1.25, 2) -- (0,0.75);
+	\draw[color=black, semithick, dashed, angle=45] (1.75, 2.25) -- (0,0.5);
+	\draw[color=black, semithick, dashed, angle=45] (2.25, 2.5) -- (0,0.25);
+	\draw[color=black, semithick, dashed, angle=135] (1.25, 3) -- (0,4.25);
+	\draw[color=black, semithick, dashed, angle=135] (1.75, 2.75) -- (0,4.5);
+	\draw[color=black, semithick, dashed, angle=135] 	(2.25, 2.5) -- (0,4.75);
+	\draw (2.5, 3.5) arc [radius=1.0, start angle=90, end angle=270];
+	\draw[thin, dash dot] (-4, 2.5) -- (3.5, 2.5);
+	\node[west] at (2,2.5) {$\alpha$};
+	\node[south] at (-0.25,2.5) {C};
+	\node[south] at (3,2.75) {U};
+	\draw[->, black] (-1.25, 2.5) -- (-0.25, 2.5);
+	\draw[->, black] (2.75, 2.5) -- (3.5, 2.5);
+	\draw[->, black] (-3, 1) -- (-3, 2);
+	\draw[black, semithick] (-3, 2) -- (-3, 3);
+	\draw[->, black] (-3, 4) -- (-3, 3);
+	\draw[black, semithick] (-3, 3.5) -- (-2, 3.5) 
+	node[black, anchor=south east]{$\phi{d}$};
+	\draw[black, semithick] (-1, 3.5) -- (0, 3.5);
+	\draw[black, semithick] (0, 3.5) -- (0.5, 2.5);
+	\draw[black, semithick] (-0.25, 3.5) -- (-0.25, 3.5) node[black, anchor=south east]{$\rho_V$};
+	\draw [->, black] (2.5, 3.5) arc [radius=1.0, start angle=90, end angle=135];
+	\draw [->, black] (2.5, 1.5) arc [radius=1.0, start angle=270, end angle=225];
+	\draw[red, ultra thick, dashed](0, 0) -- (0, 0.75) --(1.25, 2) -- (0.75, 2) -- (0.75, 3) -- (1.25, 3) -- (0, 4.25) -- (0, 5) -- (2.5, 2.5) -- (0, 0);
+	\draw[->, blue, ultra thick] (0.75, 2.5) -- (-1, 2.5) 
+	node[midway, anchor=south west, xshift={-6mm}, yshift={1mm}]{$\vec{J}_{BE}$};
+	\draw[->, blue, ultra thick] (0, 4.5) -- (-1, 5.5) 
+	node[midway, anchor=south west, xshift={-3mm}, yshift={1mm}]{$\vec{J}_{KI}$};
+	\draw[->, blue, ultra thick] (0, 0.5) -- (-1, -0.5) 
+	node[midway, anchor=south west, xshift={-6mm}, yshift={1mm}]{$\vec{J}_{KI}$};
+	\end{tikzpicture}
+	\caption{Vektor ábra}
+\end{subfigure}
+\caption{A feladatban megadott ábra és az elkészített vektor ábra}
+\label{figure:fre}
+\end{figure}
 
 
 \noindent\hrulefill
 
-% ide kerül a megrajzolt ábra (hatóerők és ellenőrző felület)
+\noindent Első lépésben jelölni kell az ábrára az ellenőrző felületet, ezt pirossal jelölöm, és a hatóerőket, ezek pedig kék színnel jelennek meg. A megrajzolt vektor ábra a vonal felett jobb oldalon látható (b).
 
-\noindent A vektor ábráról leolvasható, hogy a belépő $\vec{J}$ és a kilépő két $\vec{J}$ vektor összegének nagysága egyenlő!
+\noindent A vektor ábráról leolvasható, hogy a belépő $\vec{J_{BE}}$ és a kilépő két $\vec{J_{KI}}$ vektor összegének nagysága egyenlő!
 
 \begin{equation}
 J_{be} = 2 J_{ki}
