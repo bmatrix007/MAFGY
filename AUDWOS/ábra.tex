@@ -5,7 +5,7 @@
 		% Rács és vágómaszk
 		\draw[step=1cm, white, very thin] (-8, -5) grid (8, 5);
 		%\clip (-8, -5) rectangle (8, 5);
-%KÖR!!!			
+%KÖRÖK!!!			
 		\draw [ultra thick] (-3, 3) circle (0.5);
 		\draw [ultra thick] (-3, 3) circle (0.05);
 %VÍZSZINTES CSŐRÉSZ
@@ -22,7 +22,7 @@
 %FELSŐ IDOM ILLESZTÉS
         \draw [ultra thick] (-3.6, 4) -- (-3.4, 4);
 %VÍZ
-        \draw [thick] (-5, -2) -- (3.75, -2);
+        \draw (-5, -2) -- (3.75, -2);
 %ILLESZTÉSEK IDOM ALUL		
         \draw [ultra thick] (2.9, -2.75) -- (3.1, -2.75); 
 %LÁBSZELEP TÉGLALAP
@@ -34,7 +34,7 @@
 %MÉRETSEGÉDVONAL függőleges
 \draw[dash pattern={on 8mm off 1mm on 0.5mm off 1mm}] (-3, 4) -- (-3, 2);       
 %MÉRETSEGÉDVONAL vízszintes
-\draw[dash pattern={on 8mm off 1mm on 0.5mm off 1mm}] (-5.5, 3) -- (-3.05, 3);
+\draw[dash pattern={on 8mm off 1mm on 0.5mm off 1mm}] (-5.25, 3) -- (-3.05, 3);
 %MÉRETVONAL H MAGASSÁG
 \draw[<->] (-4.5, -2) -- (-4.5, 3);
 %MÉRETVONAL CSŐÁTMÉRŐ
@@ -46,7 +46,39 @@
 
 %\draw (-2,-2) -- (-2.1,-2.1) -- (-1.9,-2.15) -- (-2.1,-2.3);
 
+% A PONT
                
+\draw (-3, 3) -- (-3.75, 2) node[black, anchor=north east]{$A$};
+
+% zeta_k pont
+
+\draw (-3, 3) -- (-2.25, 2) node[black, anchor=north west]{$\zeta_k$};
+
+% d átmérő
+
+\draw (-1, 2.25) -- (-0.5, 2.25) node[black, anchor= west] at (-1, 2.5) {$d$};
+
+% zeta_k pont ív
+
+\node[anchor=north] at (2.5, 2.75) {$\zeta_k$};
+
+% zeta_L 
+
+\node[anchor=north] at (4, -2.875) {$\zeta_L$};
+
+% p0 nyomás 
+
+\node[anchor=north] at (-0.5, -1) {$p_0$};
+
+% víz sűrűsége 
+
+\node[anchor=north] at (0.5, -2) {$\varrho_V$};
+
+% H magasság felírat
+
+\draw (-5.25, 0.5) -- (-4.5, 0.5) node[black, anchor=east] at (-4.5, 0.75){$H$};
+
+
 	\end{tikzpicture}
 	\caption{Szívócső jelleggörbe}
 \end{figure}
