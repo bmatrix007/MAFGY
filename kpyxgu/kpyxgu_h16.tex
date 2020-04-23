@@ -1,0 +1,336 @@
+\section*{H1/6. feladat}
+\addcontentsline{toc}{section}{H1/6. feladat}
+
+Határozza meg azt a fordulatszámot \SI{}{\1\per\minute}-ban, amelynél az $A$ szár éppen kiürül, ha nyugalmi helyzetben a víz $H = \SI{0,4}{\meter}$ magasan áll az U csőben, $L = \SI{0,4}{\meter}$, $\varrho = \SI{e3}{\kilogram\per\meter\cubed}$, $g = \SI{9,81}{\meter\per\second\squared}$, valamint ennél a fordulatszámnál a $C$ pontban a nyomást $\SI{}{\pascal}$ -ban, ha $p_0 = \SI{1}{\bar}$! Készítsen vázlatot! A víz nem lép ki az U-csőből.
+
+\subsubsection* {Megoldási útmutatás:}
+\vspace{2mm}
+Rajzolja be a keresett fordulatszámnál a vízfelszínt és a rajta keresztülmenő potenciálfelszínt!
+\\ \\
+Válasszon alkalmas helyen az $r$ koordinátát! Írja fel a potenciálfelszín metszetét leíró $h= f(r)$ függvényt!
+
+\subsection{Ábrák:}
+
+	\begin{tikzpicture}
+
+\pgfmathsetmacro{\L}{4}
+\pgfmathsetmacro{\H}{3}
+
+\pgfmathsetmacro{\d}{0.7} % diameter of the tube
+\pgfmathsetmacro{\r}{1} % elbow radius
+\pgfmathsetmacro{\h}{5} % height of tube
+\pgfmathsetmacro{\p}{0.7} % pivot size
+
+% Pipe
+\draw [very thick]   
+(0, \d/2)
+-- ({\L - \d/2 - (\r-\d/2)}, \d/2)
+arc (270:360:\r-\d/2)
+-- ( \L - \d/2, \h)
+( \L + \d/2, \h)
+-- ( \L + \d/2, {-\d/2 + (\r+\d/2)})
+arc (0:-90:\r+\d/2)
+-- (-\L - \d/2 + \r+\d/2, -\d/2)
+arc (270:180:\r+\d/2)
+-- (-\L - \d/2, \h)
+(-\L + \d/2, \h)
+-- (-\L + \d/2, \d/2+\r-\d/2)
+arc (180:270:\r-\d/2)
+-- (0, \d/2);
+
+% Fluid
+\fill [pattern=horizontal lines]
+(0, \d/2)
+-- ({\L - \d/2 - (\r-\d/2)}, \d/2)
+arc (270:360:\r-\d/2)
+-- ( \L - \d/2, \H)
+-- ( \L + \d/2, \H)
+-- ( \L + \d/2, {-\d/2 + (\r+\d/2)})
+arc (0:-90:\r+\d/2)
+-- (-\L - \d/2 + \r+\d/2, -\d/2)
+arc (270:180:\r+\d/2)
+-- (-\L - \d/2, \H)
+-- (-\L + \d/2, \H)
+-- (-\L + \d/2, \d/2+\r-\d/2)
+arc (180:270:\r-\d/2)
+-- cycle;
+
+% Centerline
+\draw [dashdotted, thick]
+(-\L, \h*1.1)
+-- (-\L, \r)
+arc (180:270:\r)
+-- (\L - \r, 0)
+arc (-90:0:\r)
+-- (\L, \h*1.1);
+
+% Center axis
+\draw [dashdotted] (0, -0.5*\h) -- (0, 1.5*\h);
+% Pivot axis
+\draw [dashdotted] (-\L/2, -0.5*\h) -- (-\L/2, 1.5*\h);
+
+% L/2 dimension
+\draw [arrows={triangle 45-triangle 45}]
+(-\L/2, -0.7*\H) -- (0, -0.7*\H); 
+\draw (-\L/4, -0.7*\H) node [anchor=south] {\LARGE L/2};
+% L dimensions
+\draw [arrows={triangle 45-triangle 45}]
+(0, 0.7*\h) --++ (-\L, 0); 
+\draw (-\L/2, 0.7*\h) node [anchor=south east] {\LARGE L};
+\draw [arrows={triangle 45-triangle 45}]
+(0, 0.7*\h) --++ (\L, 0); 
+\draw (\L/2, 0.7*\h) node [anchor=south west] {\LARGE L};
+% H dimension
+\draw (\L - \r, 0) --++ (\r + 0.5*\H + 0.5, 0);
+\draw (-\L, \H) --++ (2*\L + 0.5*\H + 0.5, 0);
+\draw [arrows={triangle 45-triangle 45}]
+(\L + 0.5*\H, 0) --++ (0, \H);
+\draw (\L + 0.5*\H, \H/2) node [anchor=west] {\LARGE H};
+% rho-V
+\draw (\L/4, 0) --++ (1,1);
+\draw (\L/4 + 1, 1) node [anchor=south west]
+{\LARGE $\rho_V$};
+
+% Pivot
+\draw [very thick]
+(-\L/2 - 0.1, -\d/2 - 0.1 - \p)
+-- (-\L/2 - 0.1, -\d/2 - 0.1 - 0.3*\p)
+arc (0:90:0.3*\p)
+-- (-\L/2 - 0.1 - \p, -\d/2 - 0.1);
+\draw [very thick]
+(-\L/2 + 0.1, -\d/2 - 0.1 - \p)
+-- (-\L/2 + 0.1, -\d/2 - 0.1 - 0.3*\p)
+arc (180:90:0.3*\p)
+-- (-\L/2 + 0.1 + \p, -\d/2 - 0.1);	
+
+% C
+\draw (\L - \r, \r) ++ (0.7*\r,-0.7*\r) --++ (1,-1);
+\draw (\L - \r, \r) ++ (0.7*\r,-0.7*\r)
+[fill=black] circle (0.1);
+\draw (\L - \r, \r) ++ (0.7*\r,-0.7*\r) ++ (1,-1)
+[fill=white] circle (0.3);
+\draw (\L - \r, \r) ++ (0.7*\r,-0.7*\r) ++ (1,-1) node {C};
+
+% A
+\draw (-\L-\d/2, 0.8*\h) --++ (-1,1);
+\draw (-\L-\d/2, 0.8*\h) ++ (-1,1) [fill=white] circle (0.3);
+\draw (-\L-\d/2, 0.8*\h) ++ (-1,1) node {A};
+% B
+\draw (\L+\d/2, 0.8*\h) --++ (1,1);
+\draw (\L+\d/2, 0.8*\h) ++ (1,1) [fill=white] circle (0.3);
+\draw (\L+\d/2, 0.8*\h) ++ (1,1) node {B};
+
+% P0's
+\draw (-\L, 1.1*\h) node [anchor=south] {\large $P_0$};
+\draw (\L, 1.1*\h) node [anchor=south] {\large $P_0$};
+
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+
+\pgfmathsetmacro{\L}{3}
+\pgfmathsetmacro{\H}{5}
+
+\pgfmathsetmacro{\d}{0.7} % diameter of the tube
+\pgfmathsetmacro{\r}{1} % elbow radius
+\pgfmathsetmacro{\h}{5} % height of tube
+\pgfmathsetmacro{\p}{0.7} % pivot size
+
+% Pipe
+\draw [very thick]   
+(0, \d/2)
+-- ({\L - \d/2 - (\r-\d/2)}, \d/2)
+arc (270:360:\r-\d/2)
+-- ( \L - \d/2, \h)
+-- ( \L + \d/2, \h)
+-- ( \L + \d/2, {-\d/2 + (\r+\d/2)})
+arc (0:-90:\r+\d/2)
+-- (-\L - \d/2 + \r+\d/2, -\d/2)
+arc (270:180:\r+\d/2)
+-- (-\L - \d/2, \h)
+-- (-\L + \d/2, \h)
+-- (-\L + \d/2, \d/2+\r-\d/2)
+arc (180:270:\r-\d/2)
+-- cycle;
+
+% Centerline
+\draw [dashdotted, thick]
+(-\L, \h*1.1)
+-- (-\L, \r)
+arc (180:270:\r)
+-- (\L - \r, 0)
+arc (-90:0:\r)
+-- (\L, \h*1.1);
+
+% Pivot axis
+\draw [dashdotted, arrows={-triangle 45}]
+(-\L/2, -0.5*\h) -- (-\L/2, 1.5*\h);
+\draw (-\L/2, 1.5*\h) node [right] {h};
+
+% Pivot
+\draw [very thick]
+(-\L/2 - 0.1, -\d/2 - 0.1 - \p)
+-- (-\L/2 - 0.1, -\d/2 - 0.1 - 0.3*\p)
+arc (0:90:0.3*\p)
+-- (-\L/2 - 0.1 - \p, -\d/2 - 0.1);
+\draw [very thick]
+(-\L/2 + 0.1, -\d/2 - 0.1 - \p)
+-- (-\L/2 + 0.1, -\d/2 - 0.1 - 0.3*\p)
+arc (180:90:0.3*\p)
+-- (-\L/2 + 0.1 + \p, -\d/2 - 0.1);	
+\draw [thick, arrows={-triangle 45}]
+([shift=(180:0.6)]-\L/2+0.45,-\d/2-1.5*\p)
+arc (100:440:0.6 and 0.2);
+
+% C
+\draw (\L - \r, \r) ++ (0.7*\r,-0.7*\r) --++ (1,-1);
+\draw (\L - \r, \r) ++ (0.7*\r,-0.7*\r)
+[fill=black] circle (0.1);
+\draw (\L - \r, \r) ++ (0.7*\r,-0.7*\r) ++ (1,-1)
+[fill=white] circle (0.3);
+\draw (\L - \r, \r) ++ (0.7*\r,-0.7*\r) ++ (1,-1) node {C};
+
+
+% Parabola
+\draw (-4,1) parabola bend (-1.5,-.5) (4,4);
+
+% 2H
+\draw (\L+\d/4, 0.4*\h) ++ (0,4*\d/4,+0,4*\d/4) --++ (1,-1);
+\draw (\L+\d/4, 0.4*\h) ++ (0,4*\d/4,+0,4*\d/4)
+[fill=black] circle (0.1);
+\draw (\L+\d/4, 0.4*\h) ++ (0,4*\d/4,+0,4*\d/4) ++ (1,-1)
+[fill=white] circle (0.3);
+\draw (\L+\d/4, 0.4*\h) ++ (0,4*\d/4,+0,4*\d/4) ++ (1,-1) node {2H};
+
+% 0
+\draw (-\L - \r, \r) ++ (\r,-\r) --++ (1,1);
+\draw (-\L - \r, \r) ++ (\r,-\r) ++ (1,1)
+[fill=white] circle (0.3);
+\draw (-\L - \r, \r) ++ (\r,-\r) ++ (1,1) node {0};
+
+\end{tikzpicture}
+
+\vspace{5mm}
+
+A fenti ábrán látható a víz potenciálgörbéje, így a forgás hatására az $A$ szár kiürül, ezt vehetjük a $0$ szintnek; valamint ennek hatására a $B$ szárban az eredeti vízszint kétszeresére nő azaz $2H$-ra.
+
+\subsubsection* {Adatok:}
+
+\begin{equation}
+L = \SI{0,4}{\meter}
+\quad
+p_0 = \SI{1}{bar},
+\quad
+\varrho_v = \SI{e3}{\kilogram\per\meter\cubed}
+\end{equation}
+\begin{equation}
+g = \SI{9,81}{\meter\per\second\squared},
+\quad
+H = \SI{0,4}{\meter},
+\end{equation}
+
+\vspace{20mm}
+A térerővektor alakja:
+
+\[
+\vec{F_t}=
+\left[ {\begin{array}{ccc}
+	\omega^2 r \\
+	0 \\
+	-g \\
+	\end{array} } \right]
+\]
+	
+\subsubsection* {a) Fordulatszám meghatározása \SI{}{\1\per\minute}-ban:}
+
+
+\begin{equation}
+p_0 - p_2H = \int_{2H}^{0} \varrho\vec{F} d\vec{r}
+\end{equation}
+\begin{equation}
+p_0 - p_2H = \int_{2H}^{0} \varrho\omega^2 r dr + \int_{2H}^{0} \varrho\left(-g\right) dz
+	\end{equation}
+
+Fölbontjuk az integrálokat:
+
+\begin{equation}
+p_1 - p_2 = \varrho\omega^2 \left(\dfrac{\left(\dfrac{L}{2}\right)^2}{2} - \dfrac{\left(\dfrac{3L}{2}\right)^2}{2}\right) - \varrho g\left(0 - 2H\right)
+\end{equation}
+
+\begin{equation}
+p_0 - p_2H = \varrho\omega^2 \left(\dfrac{L^2}{8} - \dfrac{9L^2}{8}\right) + \varrho g 2H
+\end{equation}
+
+\begin{equation}
+p_0 - p_2H = -\varrho\omega^2 \dfrac{8L^2}{8} + \varrho g 2H
+\end{equation}
+
+Mivel tudjuk, hogy $p_1 = p_2$ ezért:
+
+\begin{equation}
+0 = -\varrho\omega^2 L^2 + \varrho g 2H
+\end{equation}
+
+\begin{equation}
+\omega^2 L^2 = g 2H
+\end{equation}
+
+\begin{equation}
+\omega = \dfrac{\sqrt{g 2H}}{L}
+\end{equation}
+
+\begin{equation}
+\omega = \SI{7}{\dfrac{\radian}{\second}}
+\end{equation}
+
+Mivel már ismerjük az ${\omega}$ -t, ezért ebből már ki tudjuk számolni a fordulatszámot:
+
+\begin{equation}
+n = \dfrac{\omega}{2 \pi} = \SI{1,11}{\dfrac{1}{\second}} = \SI{66,88}{\dfrac{1}{\minute}}
+\end{equation}
+
+\subsubsection* {b) A nyomás meghatározása a $C$ pontban $\SI{}{\pascal}$ -ban:}
+
+\begin{equation}
+p_C - p_2H = \int_{2H}^{C} \varrho\vec{F} d\vec{r}
+\end{equation}
+
+\begin{equation}
+p_C - p_2H = \int_{2H}^{C} \varrho\omega^2 r dr + \int_{2H}^{C} \varrho \left(-g\right) dz
+\end{equation}
+
+\begin{equation}
+p_C - p_2H = \varrho\omega^2 \left(\dfrac{\left(\dfrac{3L}{2}\right)^2}{2} - \dfrac{\left(\dfrac{3L}{2}\right)^2}{2}\right) - \varrho g\left(0 - 2H\right)
+\end{equation}
+
+\begin{equation}
+p_C - p_2H = \varrho g 2 H
+\end{equation}
+
+\begin{equation}
+p_C = p_2H + \varrho g 2H
+\end{equation}
+
+\begin{equation}
+p_C = \SI{107848}{\pascal}
+\end{equation}
+
+
+\newcommand{\aline}{\\\hline &&\rule{0cm}{1cm}}
+	\newcounter{theyflines}
+	
+	Személyes adatok:
+	\medskip
+	
+	\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|}
+		\hline
+		Név & Neptunkód & Szak
+		\forloop{\aline}\\
+		Sallér Anna & KPYXGU & Biomérnök BSc
+		\forloop\\
+		\hline
+		
+	\end{tabular}
+	\medskip
+	
