@@ -1,0 +1,90 @@
+% A feladat címe automatikus számozás nélkül
+\section*{1/20. feladat: Vízbe merülő csuklós rúd}
+
+% Hozzáadás a tartalomjegyzékhez azonos címmel
+\addcontentsline{toc}{section}{1/20. feladat: Vízbe merülő csuklós rúd}
+
+% Táblázat a szerző adataival
+\begin{tabular}{ | p{2cm} | p{14cm} | } 
+	\hline
+	Szerző & Székely Dániel, TDS675 \\ 
+	\hline
+	Szak & Vegyészmérnök \\ 
+	\hline
+	Félév & 2019/2020 II. (tavaszi) félév \\ 
+	\hline
+\end{tabular}
+\vspace{0.5cm}
+
+% A feladat szövege
+\noindent Mekkora az ábrán látható rúd sűrűsége, amely egy csuklóhoz van rögzítve, egy része a vízbe merül úgy, hogy a középpontja a víz felszínén van? 
+\begin{figure}[ht]
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}
+%			\draw[step=1cm, gray, very thin] (0, -2) grid (5, 3);
+			\clip (0,-2) rectangle (5,3);
+			\draw (1,2) -- (2,2);
+			\draw[very thin] (0,0) -- (5,0);
+			\draw (1.5,1.7) circle (0.1);
+			\draw (1.25,2) -- (1.45,1.8);
+			\draw (1.75,2) -- (1.55,1.8);
+			\draw (1.42,1.65) -- (2.9,-1.6) -- (3.07,-1.52) -- (1.58,1.72);
+			\fill[pattern={Lines[angle=45, distance=2mm]}] (1,2) rectangle (2,2.2);
+			\pgflength[xa=1.58, ya=1.72, xb=2.35, yb=0.05, ra=-0.3]{$l/2$};
+			\draw (0.5,0) -- (0.4,0.1) -- (0.6,0.1) -- (0.5,0);
+		\end{tikzpicture}
+		\caption{}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}
+%			\draw[step=1cm, gray, very thin] (-1,1) grid (4,-4);
+			\clip (-1,1) rectangle (4,-4);
+			\draw[->] (-1,0) -- (4,0) node[anchor=south, xshift=-5mm]{$p(Pa)$};
+			\draw[->] (0,1) -- (0,-4) node[anchor=south east]{$l(m)$};
+			\draw[red] (0,-1.5) -- (4,-3) node[anchor=north, xshift=-5mm, yshift=2.5mm]{$p_F$};
+			\draw[blue] (0,-1) -- (4,-2.5) node[anchor=south, xshift=-5mm, yshift=2.5mm]{$p_A$};
+		\end{tikzpicture}
+		\caption{A helyi nyomás ábrája}
+	\end{subfigure}%
+	\label{figure:fre}
+\end{figure}
+
+A helyi nyomás ábrája azt hivatott magyarázni, hogy a rúd különböző oldalain különbözőek a nyomásértékek, hiszen a rúd ferdén merül a vízbe, tehát adott hossznál adott oldalához más vízoszlopmagasság tartozik, ami adott pontokban nyomáskülönbséget hoz létre. Ennek a nyomáskülönbségnek az eredője a felhajtóerő, ami minden pontban állandó értéket mutat (,amennyiben a szóban forgó rúd minden pontban megegyező vastagságú.)
+\vspace{0.5cm}
+
+% A feladat megoldása
+\noindent \underline{Megoldás}
+
+\vspace{0.5cm}
+A rúdra két erő hat: a gravitáció, mint tömegfajlagos erő, illetve a víz felhajtóereje (,a levegő sűrűsége lényegesen kisebb a vízénél, így annak felhajtóerejét elhanyagoljuk). Mivel a rúd egyensúlyban van, ezért az általuk a csuklóra gyakorolt forgatónyomatékok eredőjének 0-nak kell lennie, vagyis:
+\begin{equation*}
+	\vec{M}_G=\vec{F}_G×\vec{r}_1=-\vec{F}_F×\vec{r}_2=-\vec{M}_F
+\end{equation*}
+Az $\vec{r}_1$ helyvektor a rúd felénél (tömegközéppontjánál) van, az $\vec{r}_2$ pedig a rúd háromnegyedénél \linebreak (a vízbe merülő rész tömegközéppontjánál). Írjuk fel ezek után a ható erőknek és ezekkel a forgatónyomatékoknak nagyságát:
+\begin{equation*}
+	F_G=mg
+\end{equation*}
+\begin{equation*}
+	M_G=mg\cdot \dfrac{l}{2}sin\alpha=\varrho Ag\dfrac{l^2}{2} sin\alpha
+\end{equation*}
+\begin{equation*}
+	F_F=m_Vg
+\end{equation*}
+\begin{equation*}
+	M_F=m_Vg\dfrac{3l}{4} sin\alpha=\varrho_V Ag \dfrac{3l^2}{8} sin\alpha
+\end{equation*}
+Mivel a forgatónyomatékok nagyságát vettük, ezért ennek a kettőnek egyenlőnek kell lennie. Ezeket felírva látható, hogy az egyenlet jelentősen egyszerűsödik.
+\begin{equation*}
+	\varrho \bcancel{A}\bcancel{g}\dfrac{\bcancel{l^2}}{2} \bcancel{sin\alpha}=\varrho_V \bcancel{A}\bcancel{g} \dfrac{3\bcancel{l^2}}{8} \bcancel{sin\alpha}
+\end{equation*}
+\begin{equation*}
+	\dfrac{\varrho}{2}=\dfrac{3\varrho_V}{8}
+\end{equation*}
+\begin{equation*}
+	\varrho=\dfrac{3}{4}\varrho_V=\underline{\underline{\SI{750}{\kilo\gram\per\meter^3}}}
+\end{equation*}
+
+% Oldaltörés
+\pagebreak
